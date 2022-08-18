@@ -1,15 +1,13 @@
 import crypto from "crypto"
+import { genesis } from "./genesis.js"
 
 export const Block = {
-      genesis() {
-        const genesis = {
-          timestamp: Date.now(),
-          lasthash: "--23-",
-          hash: "0000000000000000000000000000000000000000000000000000000000000000",
-          data: { name: "Luposki"}
-        }
-
-        return genesis
+      genesis: () => genesis,
+      hash(timestamp, lasthash, data) {
+        return crypto
+        .createHash('sha256')
+        .update(`${timestamp}-${lasthash}-${data}`)
+        .digest('hex');
       },
       mineBlock(lastBlock, data) {
         const newBlock = {
@@ -20,9 +18,5 @@ export const Block = {
         }
 
         return newBlock
-      },
-      hash(timestamp, lasthash, data) {
-        const hash = crypto.createHash('sha256').update(`${timestamp}-${lasthash}-${data}`).digest('hex');
-        return hash
       }
 }
