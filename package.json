@@ -1,0 +1,24 @@
+{
+  "name": "blockchain-myreb",
+  "version": "1.0.0",
+  "description": "",
+  "main": "block.js",
+  "type": "module",
+  "scripts": {
+    "start": "node test.js"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/theluposki/blockchain-myreb.git"
+  },
+  "keywords": [],
+  "author": "",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/theluposki/blockchain-myreb/issues"
+  },
+  "homepage": "https://github.com/theluposki/blockchain-myreb#readme",
+  "dependencies": {
+    "crypto-js": "^4.1.1"
+  }
+}
